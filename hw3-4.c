@@ -1,28 +1,27 @@
 #include <stdio.h>
 
 int main() {
-  // Set final answer
-  char answer[5] = "1324";
-
-  // Set guess value holder
+ 
+  char answer[5];
+  scanf("%s", answer);
   char guess[5];
 
-  // Keep guessing until user input '0'
   while (guess[0] != '0') {
     scanf("%s", guess);
 
     int correctPositionAndValue = 0;
     int correctValue = 0;
-
-    for (int i = 0; i < 4; i++) {
+    int i; 
+    for ( i = 0; i < 4; i++) {
       if (answer[i] == guess[i]) {
         correctPositionAndValue++;
-        guess[i] = 'x'; // Avoid double count
+        guess[i] = 'x'; 
       }
     }
 
-    for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < 4; j++) {
+    for ( i = 0; i < 4; i++) {
+    	int j;
+      for (j = 0; j < 4; j++) {
         if (answer[i] == guess[j]) {
           correctValue++;
           continue;
